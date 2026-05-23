@@ -1,5 +1,6 @@
 import { expertise, profile } from "@/data/portfolio";
 
+
 export function HeroSection() {
   return (
     <section
@@ -43,7 +44,7 @@ export function HeroSection() {
         <div className="mx-auto w-full max-w-xl rounded-2xl border border-white/10 bg-zinc-950/55 p-5 shadow-2xl shadow-black/40 backdrop-blur">
           <div className="flex items-center gap-4 border-b border-white/10 pb-5">
             <div className="grid size-16 place-items-center rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-fuchsia-500 text-xl font-black text-white">
-              DV
+              SS
             </div>
             <div>
               <h2 className="text-xl font-bold text-white">{profile.name}</h2>

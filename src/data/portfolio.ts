@@ -1,11 +1,11 @@
 export const profile = {
-  name: "Devon Vance",
+  name: "Soumyasree Sabat",
   role: "Multidomain Engineer",
   tagline: "A multidisciplinary hybrid engineer",
   headline: "Securing, Building, & Orchestrating The Future of Tech",
   summary:
     "I construct secure-by-design software systems, resilient cloud pipelines, and high-performance AI-enabled products for teams that care about reliability.",
-  email: "contact@devonvance.io",
+  email: "sabat.soumya.official@gmail.com",
   github: "https://github.com/Soumya-Sabat",
   resume: "/files/resume.pdf",
 };
@@ -45,12 +45,13 @@ export const stats = [
   { value: "18", label: "Smart Contracts" },
 ];
 
-export const domains = [
-  "Offensive Security",
-  "DevOps / SRE",
-  "Blockchain Dev",
-  "Full Stack",
-  "AI / ML",
+export const projectTags = [
+  "All",
+  "Rust",
+  "Kubernetes",
+  "Solidity",
+  "Next.js",
+  "PyTorch",
 ];
 
 export const securitySkills = [
@@ -70,35 +71,43 @@ export const projects = [
       "High-speed automated recon toolkit designed to detect dangling DNS records, open S3 buckets, and misconfigured SPF records with proof-of-concept generation.",
     impact: "2,500+ Assets/recon",
     metric: "0% false positives on validated POCs",
-    tags: ["Rust", "DNSSEC", "Exploit Payloads", "Bug Bounty API"],
+    tags: ["Rust", "DNSSEC", "Security", "Bug Bounty API"],
   },
   {
     title: "Zero-Trust Multi-Region Kubernetes Orchestrator",
     status: "Shipped",
     description:
       "Terraform and ArgoCD platform for mTLS service mesh, progressive delivery, and policy-driven workload isolation.",
-    tags: ["Kubernetes", "Terraform", "mTLS"],
+    impact: "8 production clusters",
+    metric: "99.98% platform uptime",
+    tags: ["Kubernetes", "Terraform", "DevOps", "mTLS"],
   },
   {
     title: "Vortex: Gas-Optimized Decentralized Lending",
     status: "Audited",
     description:
       "Solidity lending protocol with liquidation bots, invariant tests, and automated vault risk scoring.",
-    tags: ["Solidity", "Foundry", "Security"],
+    impact: "36 invariant tests",
+    metric: "28% gas reduction",
+    tags: ["Solidity", "Foundry", "Blockchain", "Security"],
   },
   {
     title: "Scribe: Collaborative Real-Time Documentation",
     status: "Live",
     description:
       "Realtime workspace using CRDT synchronization, granular permissions, and searchable version history.",
-    tags: ["Next.js", "TypeScript", "Postgres"],
+    impact: "Sub-80ms sync loop",
+    metric: "12k documents indexed",
+    tags: ["Next.js", "TypeScript", "Postgres", "Full Stack"],
   },
   {
     title: "NeuroScrobe: On-Device LLM Fine-Tuning Pipeline",
     status: "Research",
     description:
       "Private edge inference workflow for fine-tuning compact models on sensitive local datasets.",
-    tags: ["PyTorch", "Transformers", "LoRA"],
+    impact: "Local-first training",
+    metric: "42% smaller adapters",
+    tags: ["PyTorch", "Transformers", "AI / ML", "LoRA"],
   },
 ];
 
