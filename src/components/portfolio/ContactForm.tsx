@@ -48,7 +48,7 @@ export function ContactForm() {
           required
           name="name"
           className="rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-400"
-          placeholder="Ada Lovelace"
+          placeholder="Your Name"
         />
       </label>
       <label className="grid gap-2 text-left text-xs font-bold text-zinc-300">
@@ -58,22 +58,8 @@ export function ContactForm() {
           name="email"
           type="email"
           className="rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-400"
-          placeholder="ada@example.com"
+          placeholder="Your Email"
         />
-      </label>
-      <label className="grid gap-2 text-left text-xs font-bold text-zinc-300 sm:col-span-2">
-        Project type
-        <select
-          name="projectType"
-          className="rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition focus:border-blue-400"
-          defaultValue="Security audit"
-        >
-          <option>Security audit</option>
-          <option>Cloud platform</option>
-          <option>Full-stack product</option>
-          <option>AI workflow</option>
-          <option>Smart contract review</option>
-        </select>
       </label>
       <label className="grid gap-2 text-left text-xs font-bold text-zinc-300 sm:col-span-2">
         Message
@@ -81,7 +67,7 @@ export function ContactForm() {
           required
           name="message"
           rows={4}
-          minLength={20}
+          minLength={10}
           className="resize-none rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-400"
           placeholder="Tell me about the system, timeline, and what needs to be protected."
         />
@@ -89,10 +75,10 @@ export function ContactForm() {
       <div className="flex flex-wrap items-center gap-3 sm:col-span-2">
         <button
           disabled={state === "loading"}
-          className="rounded-full bg-white px-5 py-3 text-sm font-black text-zinc-950 transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
+          className=" rounded-full bg-white px-5 py-3 text-sm font-black text-zinc-950 transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
           type="submit"
         >
-          {state === "loading" ? "Sending..." : "Schedule technical briefing"}
+          {state === "loading" ? "Sending..." : "Take Off"}
         </button>
         {message ? (
           <p

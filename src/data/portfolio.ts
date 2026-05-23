@@ -1,6 +1,6 @@
 export const profile = {
   name: "Soumyasree Sabat",
-  role: "Multidomain Engineer",
+  role: "Backend Engineer & Adversarial Systems Designer",
   tagline: "A multidisciplinary hybrid engineer",
   headline: "Securing, Building, & Orchestrating The Future of Tech",
   summary:
@@ -9,6 +9,7 @@ export const profile = {
   github: "https://github.com/Soumya-Sabat",
   linkedin : "https://www.linkedin.com/in/soumyasree-sabat-74a6372ba/",
   resume: "/files/resume.pdf",
+  insta:""
 };
 
 export const expertise = [

@@ -6,6 +6,7 @@ import { Footer } from "@/components/portfolio/Footer";
 import { HackathonsSection } from "@/components/portfolio/HackathonsSection";
 import { HeroSection } from "@/components/portfolio/HeroSection";
 import { Navbar } from "@/components/portfolio/Navbar";
+import { ProfileLinksSection } from "@/components/portfolio/ProfileLinksSection";
 import { ShowcaseSection } from "@/components/portfolio/ShowcaseSection";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <ProfileLinksSection />
       <ShowcaseSection />
       <EducationSection />
       <CertificationsSection />

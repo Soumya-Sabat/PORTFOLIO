@@ -1,9 +1,12 @@
+import { profile } from "@/data/portfolio";
 import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+
+export const runtime = "nodejs";
 
 type ContactPayload = {
   name?: unknown;
   email?: unknown;
-  projectType?: unknown;
   message?: unknown;
 };
 
@@ -13,10 +16,9 @@ function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function validate(payload: ContactPayload) {
+function getContactPayload(payload: ContactPayload) {
   const name = clean(payload.name);
   const email = clean(payload.email).toLowerCase();
-  const projectType = clean(payload.projectType);
   const message = clean(payload.message);
 
   if (name.length < 2) {
@@ -27,63 +29,68 @@ function validate(payload: ContactPayload) {
     return { error: "Please enter a valid email address." };
   }
 
-  if (message.length < 20) {
-    return { error: "Please include at least 20 characters in your message." };
+  if (message.length < 10) {
+    return { error: "Please include at least 10 characters in your message." };
   }
 
-  if (message.length > 4000) {
-    return { error: "Please keep your message under 4000 characters." };
-  }
-
-  return { data: { name, email, projectType, message } };
+  return { data: { name, email, message } };
 }
 
-async function sendWithResend({
+function getRequiredEnv(name: string) {
+  const value = process.env[name]?.trim();
+
+  if (!value) {
+    throw new Error(`Missing ${name}.`);
+  }
+
+  return value;
+}
+
+async function sendMail({
   name,
   email,
-  projectType,
   message,
 }: {
   name: string;
   email: string;
-  projectType: string;
   message: string;
 }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>";
+  const smtpHost = getRequiredEnv("SMTP_HOST");
+  const smtpPort = Number(process.env.SMTP_PORT ?? 587);
+  const smtpUser = getRequiredEnv("SMTP_USER");
+  const smtpPass = getRequiredEnv("SMTP_PASS");
+  const fromEmail =
+    process.env.SMTP_FROM_EMAIL?.trim() ?? `Portfolio <${smtpUser}>`;
+  const toEmail = process.env.CONTACT_TO_EMAIL ?? profile.email;
 
-  if (!apiKey || !to) {
-    return { mode: "preview" as const };
+  if (!Number.isInteger(smtpPort)) {
+    throw new Error("SMTP_PORT must be a valid number.");
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: {
+      user: smtpUser,
+      pass: smtpPass,
     },
-    body: JSON.stringify({
-      from,
-      to,
-      reply_to: email,
-      subject: `Portfolio inquiry: ${projectType || "New project"}`,
-      text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Project type: ${projectType || "Not specified"}`,
-        "",
-        message,
-      ].join("\n"),
-    }),
   });
 
-  if (!response.ok) {
-    const details = await response.text();
-    throw new Error(`Email provider failed: ${details}`);
-  }
-
-  return { mode: "sent" as const };
+  await transporter.sendMail({
+    from: fromEmail,
+    to: toEmail,
+    replyTo: email,
+    subject: `New portfolio message from ${name}`,
+    text: [
+      "New portfolio contact form message",
+      "",
+      `Name: ${name}`,
+      `Email: ${email}`,
+      "",
+      message,
+    ].join("\n"),
+  });
 }
 
 export async function POST(request: NextRequest) {
@@ -98,22 +105,15 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const result = validate(payload);
+  const contact = getContactPayload(payload);
 
-  if ("error" in result) {
-    return NextResponse.json({ message: result.error }, { status: 400 });
+  if ("error" in contact) {
+    return NextResponse.json({ message: contact.error }, { status: 400 });
   }
 
   try {
-    const delivery = await sendWithResend(result.data);
-
-    return NextResponse.json({
-      message:
-        delivery.mode === "sent"
-          ? "Message sent. I will reply soon."
-          : "Message received in local preview mode. Add RESEND_API_KEY and CONTACT_TO_EMAIL to send real email.",
-      deliveryMode: delivery.mode,
-    });
+    await sendMail(contact.data);
+    return NextResponse.json({ message: "Message sent. I will reply soon." });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
