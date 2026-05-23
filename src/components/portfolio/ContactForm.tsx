@@ -22,7 +22,6 @@ export function ContactForm() {
       body: JSON.stringify({
         name: formData.get("name"),
         email: formData.get("email"),
-        projectType: formData.get("projectType"),
         message: formData.get("message"),
       }),
     });

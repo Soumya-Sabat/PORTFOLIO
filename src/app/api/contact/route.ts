@@ -82,14 +82,101 @@ async function sendMail({
     to: toEmail,
     replyTo: email,
     subject: `New portfolio message from ${name}`,
-    text: [
-      "New portfolio contact form message",
-      "",
-      `Name: ${name}`,
-      `Email: ${email}`,
-      "",
-      message,
-    ].join("\n"),
+    html: `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+</head>
+<body style="margin:0;padding:0;background:#f4f4f5;font-family:Arial,sans-serif;">
+  <div style="max-width:600px;margin:40px auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+
+    <div style="background:linear-gradient(135deg,#2563eb,#7c3aed);padding:32px;text-align:center;">
+      <h1 style="margin:0;color:white;font-size:24px;">
+        🚀 New Portfolio Inquiry
+      </h1>
+      <p style="margin-top:8px;color:rgba(255,255,255,.85);">
+        Someone contacted you through your website
+      </p>
+    </div>
+
+    <div style="padding:32px;">
+      <h2 style="margin-top:0;color:#18181b;">
+        Contact Information
+      </h2>
+
+      <table style="width:100%;border-collapse:collapse;">
+        <tr>
+          <td style="padding:12px 0;font-weight:bold;color:#52525b;">Name</td>
+          <td style="padding:12px 0;color:#18181b;">${name}</td>
+        </tr>
+
+        <tr>
+          <td style="padding:12px 0;font-weight:bold;color:#52525b;">Email</td>
+          <td style="padding:12px 0;color:#18181b;">${email}</td>
+        </tr>
+
+        <tr>
+          <td style="padding:12px 0;font-weight:bold;color:#52525b;">Received</td>
+          <td style="padding:12px 0;color:#18181b;">
+            ${new Date().toLocaleString()}
+          </td>
+        </tr>
+      </table>
+
+      <div style="
+        margin-top:24px;
+        background:#f8fafc;
+        border-left:4px solid #2563eb;
+        padding:20px;
+        border-radius:8px;
+      ">
+        <h3 style="margin-top:0;color:#18181b;">
+          Message
+        </h3>
+
+        <p style="
+          white-space:pre-wrap;
+          line-height:1.7;
+          color:#3f3f46;
+          margin-bottom:0;
+        ">
+          ${message}
+        </p>
+      </div>
+
+      <div style="margin-top:30px;text-align:center;">
+        <a
+          href="mailto:${email}"
+          style="
+            display:inline-block;
+            background:#2563eb;
+            color:white;
+            text-decoration:none;
+            padding:12px 24px;
+            border-radius:9999px;
+            font-weight:600;
+          "
+        >
+          Reply to ${name}
+        </a>
+      </div>
+    </div>
+
+    <div style="
+      padding:20px;
+      background:#fafafa;
+      text-align:center;
+      color:#71717a;
+      font-size:12px;
+    ">
+      Generated automatically from your portfolio contact form.
+    </div>
+
+  </div>
+</body>
+</html>
+`
   });
 }
 
@@ -113,7 +200,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await sendMail(contact.data);
-    return NextResponse.json({ message: "Message sent. I will reply soon." });
+    return NextResponse.json({ message: "Message sent.We will be in touch soon." });
   } catch (error) {
     console.error(error);
     return NextResponse.json(

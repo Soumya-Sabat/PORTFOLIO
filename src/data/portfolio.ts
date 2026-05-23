@@ -41,10 +41,10 @@ export const expertise = [
 ];
 
 export const stats = [
-  { value: "7+", label: "Years Experience" },
-  { value: "32+", label: "Security Audits" },
-  { value: "45+", label: "Production Apps" },
-  { value: "18", label: "Smart Contracts" },
+  { value: "1+", label: "Years Experience" },
+  { value: "0", label: "Security Audits" },
+  { value: "4+", label: "Production Apps" },
+  { value: "8", label: "Smart Contracts" },
 ];
 
 export const projectDomains = [
@@ -68,17 +68,17 @@ export const securitySkills = [
 export const projects = [
   {
     title: "Aegis: Automated Subdomain Takeover & Exploit Engine",
-    status: "Office Active",
+    status: "Live",
     description:
       "High-speed automated recon toolkit designed to detect dangling DNS records, open S3 buckets, and misconfigured SPF records with proof-of-concept generation.",
-    impact: "2,500+ Assets/recon",
-    metric: "0% false positives on validated POCs",
+    impact: "",
+    metric: "",
     domain: "Cybersecurity",
     techStack: ["Rust", "DNSSEC", "Security", "Bug Bounty API"],
   },
   {
     title: "Zero-Trust Multi-Region Kubernetes Orchestrator",
-    status: "Shipped",
+    status: "Futured",
     description:
       "Terraform and ArgoCD platform for mTLS service mesh, progressive delivery, and policy-driven workload isolation.",
     impact: "8 production clusters",
@@ -88,7 +88,7 @@ export const projects = [
   },
   {
     title: "Vortex: Gas-Optimized Decentralized Lending",
-    status: "Audited",
+    status: "Commited",
     description:
       "Solidity lending protocol with liquidation bots, invariant tests, and automated vault risk scoring.",
     impact: "36 invariant tests",
@@ -120,66 +120,54 @@ export const projects = [
 
 export const education = [
   {
-    period: "2015 - 2018",
-    title: "B.Sc. in Computer Science",
-    body: "Specialized in cyber security, distributed systems, and secure software engineering.",
+    period: "2009 - 2020",
+    title: "Student",
+    body: "Multidiciplinary Subjects",
   },
   {
     period: "2020 - 2022",
-    title: "M.Sc. in Machine Learning",
-    body: "Focused on adversarial ML, anomaly detection, and AI-driven security operations.",
+    title: "Intermediate Student",
+    body: "Focused on STEM Mastery, Competitive Readiness, and Scientific Excellence",
   },
   {
     period: "2023 - Present",
-    title: "Ph.D. Candidate (Part-Time)",
+    title: "B.Tech. Candidate",
     body: "Researching AI-assisted vulnerability discovery and resilient infrastructure systems.",
   },
 ];
 
 export const certifications = [
   {
-    provider: "Offensive Security",
-    title: "OSCP Offensive Security Certified Professional",
-    date: "2021",
-    credential: "OS-101-2021",
+    provider: "TryHackMe",
+    title: "Advent Of Cyber 2025",
+    date: "Dec 2025",
+    credential: "THM-OZNB92QIFE",
   },
   {
-    provider: "Amazon Web Services",
-    title: "AWS Certified DevOps Engineer - Professional",
-    date: "2022",
-    credential: "AWS-DEP-2022",
-  },
-  {
-    provider: "Blockchain Training Alliance",
-    title: "Certified Blockchain Solutions Architect",
-    date: "2023",
-    credential: "BTA-BCSA",
-  },
-  {
-    provider: "Google / TensorFlow",
-    title: "TensorFlow Developer Certificate",
-    date: "2025",
-    credential: "TFDC-2025",
+    provider: "ISC2 - CISSP ",
+    title: "Certificate of Completion",
+    date: "May 2026-2029",
+    credential: "a67b9f94-2a78-4d8e-a992-df207e6989de",
   },
 ];
 
 export const hackathons = [
   {
-    category: "Blockchain / Cryptography",
-    title: "ETHGlobal San Francisco - 1st Place Winner",
-    date: "Jun 2023",
-    result: "$10,000 Main Prize + Sponsor Pool",
+    category: "Artifical Intelligence",
+    title: "SIH - State Level",
+    date: "Jun 2025",
+    result: "",
     description:
-      "Built a zk-backed compliance layer for tokenized assets with selective disclosure and automated policy verification.",
-    tags: ["Solidity", "Circom", "Noir", "Ethereum"],
+      "Build optimization-driven systems that model constraints, allocate resources, and eliminate scheduling conflicts.",
+    tags: ["NextJS" , "GoogleSDK" , "Scheduling Algorithms"],
   },
-  {
-    category: "AI / Offensive Security",
-    title: "Global AI Defense Hackathon - Runner Up",
-    date: "Apr 2025",
-    result: "Best Security Implementation Award",
-    description:
-      "Created a multi-agent defensive system that autonomously prioritizes threat intelligence and generates exploit-safe remediations.",
-    tags: ["Python", "OpenAI", "RAG", "Docker"],
-  },
+  // {
+  //   category: "AI / Offensive Security",
+  //   title: "Global AI Defense Hackathon - Runner Up",
+  //   date: "Apr 2025",
+  //   result: "Best Security Implementation Award",
+  //   description:
+  //     "Created a multi-agent defensive system that autonomously prioritizes threat intelligence and generates exploit-safe remediations.",
+  //   tags: ["Python", "OpenAI", "RAG", "Docker"],
+  // },
 ];

@@ -28,15 +28,10 @@ export function AboutSection() {
 
         <div className="space-y-5 text-sm leading-7 text-zinc-300 sm:text-base">
           <p>
-            I am a cybersecurity researcher and product engineer specializing in
-            secure distributed infrastructure. My work sits where pragmatic
-            engineering, adversarial thinking, and reliable delivery meet.
+            I am a backend engineer building adversarial-ready infrastructure at the intersection of distributed systems, blockchain, and security. My work combines pragmatic engineering with offensive thinking to deliver reliable, production-grade platforms.
           </p>
           <p>
-            Today, I design automated zero-trust platforms, AI-assisted security
-            workflows, and production-grade applications that keep moving under
-            real pressure. I build systems that are explainable, observable, and
-            hard to misuse.
+            Today, I design backend APIs, distributed services, and smart contract-integrated systems that thrive under real pressure. My infrastructure is observable, failure-aware, and resilient by design.
           </p>
           <div className="rounded-2xl border border-violet-400/20 bg-gradient-to-r from-violet-500/12 to-blue-500/12 p-5">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-violet-200">

@@ -92,16 +92,16 @@ export function ShowcaseSection() {
                 </button>
               ))}
             </div>
-            <p className="mt-5 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-zinc-400">
+            {/* <p className="mt-5 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-zinc-400">
               A focused selection of systems built for measurable reliability,
               stronger security posture, and production impact.
-            </p>
+            </p> */}
           </div>
 
           <article className="rounded-2xl border border-white/10 bg-zinc-950/55 p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">
-                Project detail
+                Project details
               </span>
               <span className="rounded-full border border-rose-400/30 bg-rose-400/10 px-3 py-1 text-sm font-bold text-rose-200">
                 {selectedProject.status}
