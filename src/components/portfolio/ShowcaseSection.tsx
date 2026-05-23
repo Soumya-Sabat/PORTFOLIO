@@ -1,33 +1,33 @@
 "use client";
 
-import { projectTags, projects } from "@/data/portfolio";
+import { projectDomains, projects } from "@/data/portfolio";
 import { useMemo, useState } from "react";
 import { SectionHeader } from "./SectionHeader";
 
 export function ShowcaseSection() {
-  const [activeTag, setActiveTag] = useState(projectTags[0]);
+  const [activeDomain, setActiveDomain] = useState(projectDomains[0]);
   const [selectedTitle, setSelectedTitle] = useState(projects[0].title);
 
   const filteredProjects = useMemo(() => {
-    if (activeTag === "All") {
+    if (activeDomain === "All") {
       return projects;
     }
 
-    return projects.filter((project) => project.tags.includes(activeTag));
-  }, [activeTag]);
+    return projects.filter((project) => project.domain === activeDomain);
+  }, [activeDomain]);
 
   const selectedProject =
     filteredProjects.find((project) => project.title === selectedTitle) ??
     filteredProjects[0] ??
     projects[0];
 
-  function chooseTag(tag: string) {
+  function chooseDomain(domain: string) {
     const matchingProjects =
-      tag === "All"
+      domain === "All"
         ? projects
-        : projects.filter((project) => project.tags.includes(tag));
+        : projects.filter((project) => project.domain === domain);
 
-    setActiveTag(tag);
+    setActiveDomain(domain);
     setSelectedTitle(matchingProjects[0]?.title ?? projects[0].title);
   }
 
@@ -42,16 +42,16 @@ export function ShowcaseSection() {
         />
 
         <div className="mx-auto mb-10 flex max-w-5xl flex-wrap justify-center gap-2 rounded-2xl border border-white/10 bg-black/25 p-2">
-          {projectTags.map((domain) => (
+          {projectDomains.map((domain) => (
             <button
               key={domain}
-              aria-pressed={activeTag === domain}
+              aria-pressed={activeDomain === domain}
               className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
-                activeTag === domain
+                activeDomain === domain
                   ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
                   : "text-zinc-400 hover:bg-white/10 hover:text-white"
               }`}
-              onClick={() => chooseTag(domain)}
+              onClick={() => chooseDomain(domain)}
               type="button"
             >
               {domain}
@@ -62,7 +62,9 @@ export function ShowcaseSection() {
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="rounded-2xl border border-white/10 bg-zinc-950/45 p-5">
             <h3 className="mb-4 text-lg font-bold text-blue-300">
-              {activeTag === "All" ? "All Projects" : `${activeTag} Projects`}
+              {activeDomain === "All"
+                ? "All Projects"
+                : `${activeDomain} Projects`}
             </h3>
             <div className="space-y-3" aria-live="polite">
               {filteredProjects.map((project) => (
@@ -126,19 +128,13 @@ export function ShowcaseSection() {
               </div>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
-              {selectedProject.tags.map((tag) => (
-                <button
-                  key={tag}
-                  className={`rounded-full border px-3.5 py-1.5 text-sm transition ${
-                    activeTag === tag
-                      ? "border-blue-400/50 bg-blue-500/15 text-blue-100"
-                      : "border-white/10 text-zinc-300 hover:bg-white/10 hover:text-white"
-                  }`}
-                  onClick={() => chooseTag(tag)}
-                  type="button"
+              {selectedProject.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-white/10 px-3.5 py-1.5 text-sm text-zinc-300"
                 >
-                  {tag}
-                </button>
+                  {tech}
+                </span>
               ))}
             </div>
           </article>

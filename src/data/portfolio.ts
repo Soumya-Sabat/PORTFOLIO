@@ -7,6 +7,7 @@ export const profile = {
     "I construct secure-by-design software systems, resilient cloud pipelines, and high-performance AI-enabled products for teams that care about reliability.",
   email: "sabat.soumya.official@gmail.com",
   github: "https://github.com/Soumya-Sabat",
+  linkedin : "https://www.linkedin.com/in/soumyasree-sabat-74a6372ba/",
   resume: "/files/resume.pdf",
 };
 
@@ -45,13 +46,13 @@ export const stats = [
   { value: "18", label: "Smart Contracts" },
 ];
 
-export const projectTags = [
+export const projectDomains = [
   "All",
-  "Rust",
-  "Kubernetes",
-  "Solidity",
-  "Next.js",
-  "PyTorch",
+  "Cybersecurity",
+  "DevOps / SRE",
+  "Blockchain",
+  "Full Stack",
+  "AI / ML",
 ];
 
 export const securitySkills = [
@@ -71,7 +72,8 @@ export const projects = [
       "High-speed automated recon toolkit designed to detect dangling DNS records, open S3 buckets, and misconfigured SPF records with proof-of-concept generation.",
     impact: "2,500+ Assets/recon",
     metric: "0% false positives on validated POCs",
-    tags: ["Rust", "DNSSEC", "Security", "Bug Bounty API"],
+    domain: "Cybersecurity",
+    techStack: ["Rust", "DNSSEC", "Security", "Bug Bounty API"],
   },
   {
     title: "Zero-Trust Multi-Region Kubernetes Orchestrator",
@@ -80,7 +82,8 @@ export const projects = [
       "Terraform and ArgoCD platform for mTLS service mesh, progressive delivery, and policy-driven workload isolation.",
     impact: "8 production clusters",
     metric: "99.98% platform uptime",
-    tags: ["Kubernetes", "Terraform", "DevOps", "mTLS"],
+    domain: "DevOps / SRE",
+    techStack: ["Kubernetes", "Terraform", "DevOps", "mTLS"],
   },
   {
     title: "Vortex: Gas-Optimized Decentralized Lending",
@@ -89,7 +92,8 @@ export const projects = [
       "Solidity lending protocol with liquidation bots, invariant tests, and automated vault risk scoring.",
     impact: "36 invariant tests",
     metric: "28% gas reduction",
-    tags: ["Solidity", "Foundry", "Blockchain", "Security"],
+    domain: "Blockchain",
+    techStack: ["Solidity", "Foundry", "Blockchain", "Security"],
   },
   {
     title: "Scribe: Collaborative Real-Time Documentation",
@@ -98,7 +102,8 @@ export const projects = [
       "Realtime workspace using CRDT synchronization, granular permissions, and searchable version history.",
     impact: "Sub-80ms sync loop",
     metric: "12k documents indexed",
-    tags: ["Next.js", "TypeScript", "Postgres", "Full Stack"],
+    domain: "Full Stack",
+    techStack: ["Next.js", "TypeScript", "Postgres", "Full Stack"],
   },
   {
     title: "NeuroScrobe: On-Device LLM Fine-Tuning Pipeline",
@@ -107,7 +112,8 @@ export const projects = [
       "Private edge inference workflow for fine-tuning compact models on sensitive local datasets.",
     impact: "Local-first training",
     metric: "42% smaller adapters",
-    tags: ["PyTorch", "Transformers", "AI / ML", "LoRA"],
+    domain: "AI / ML",
+    techStack: ["PyTorch", "Transformers", "AI / ML", "LoRA"],
   },
 ];
 

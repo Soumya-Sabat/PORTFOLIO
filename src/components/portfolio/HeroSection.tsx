@@ -1,5 +1,5 @@
 import { expertise, profile } from "@/data/portfolio";
-
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -38,21 +38,32 @@ export function HeroSection() {
             >
               GitHub profile
             </a>
+            <a
+              href={profile.linkedin}
+              className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
 
         <div className="mx-auto w-full max-w-xl rounded-2xl border border-white/10 bg-zinc-950/55 p-5 shadow-2xl shadow-black/40 backdrop-blur">
           <div className="flex items-center gap-4 border-b border-white/10 pb-5">
-            <div className="grid size-16 place-items-center rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-fuchsia-500 text-xl font-black text-white">
-              SS
+            <div className="grid size-16 place-items-center rounded-full bg-gradient-to-br from-sky-400 via-blue-500 to-fuchsia-500 p-1">
+              <div className="size-full overflow-hidden rounded-full">
+                <Image
+                  src="/files/pic.png"
+                  alt="Profile picture"
+                  width={74}
+                  height={74}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
             <div>
               <h2 className="text-xl font-bold text-white">{profile.name}</h2>
               <p className="text-sm text-zinc-400">
-                Lead Solutions Architect & Advisor
-              </p>
-              <p className="mt-1 text-xs text-emerald-300">
-                0 critical incidents / 99.98% uptime
+                Backend Engineer & Adversarial Systems Designer
               </p>
             </div>
           </div>

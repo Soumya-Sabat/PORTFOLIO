@@ -1,11 +1,11 @@
 import { profile } from "@/data/portfolio";
 
 const navItems = [
-  { label: "Hero", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
   { label: "Certifications", href: "#certifications" },
+  { label: "Hackathons", href: "#hackathons" },
 ];
 
 export function Navbar() {
@@ -39,12 +39,12 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
+          {/* <a
             href={`mailto:${profile.email}`}
             className="hidden rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-3 text-sm font-semibold text-emerald-300 transition hover:bg-emerald-400/15 sm:inline-flex"
           >
             Open for projects
-          </a>
+          </a> */}
           <a
             href="#contact"
             className="rounded-full bg-white px-5 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-200"

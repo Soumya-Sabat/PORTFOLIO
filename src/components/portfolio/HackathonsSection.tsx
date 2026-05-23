@@ -3,7 +3,7 @@ import { SectionHeader } from "./SectionHeader";
 
 export function HackathonsSection() {
   return (
-    <section className="bg-[#202022] px-4 py-24">
+    <section id="hackathons" className="bg-[#202022] px-4 py-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeader

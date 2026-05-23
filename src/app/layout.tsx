@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devon Vance | Secure Systems Portfolio",
+  title: "Soumya Sabat Portfolio",
   description:
     "Portfolio for a cybersecurity, cloud, full-stack, blockchain, and AI engineer.",
 };
