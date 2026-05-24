@@ -108,7 +108,7 @@ export const projects = [
   },
   {
     title: "NeuroScrobe: On-Device LLM Fine-Tuning Pipeline",
-    status: "Research",
+    status: "Research - Live",
     description:
       "Private edge inference workflow for fine-tuning compact models on sensitive local datasets.",
     impact: "Local-first training",
@@ -116,6 +116,16 @@ export const projects = [
     domain: "AI / ML",
     techStack: ["PyTorch", "Transformers", "AI / ML", "LoRA"],
   },
+  // {
+  //   title: "",
+  //   status: "",
+  //   description:
+  //     "",
+  //   impact: "",
+  //   metric: "",
+  //   domain: "",
+  //   techStack: [],
+  // },
 ];
 
 export const education = [
