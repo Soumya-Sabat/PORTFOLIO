@@ -8,7 +8,7 @@ export const profile = {
   email: "sabat.soumya.official@gmail.com",
   github: "https://github.com/Soumya-Sabat",
   linkedin : "https://www.linkedin.com/in/soumyasree-sabat-74a6372ba/",
-  resume: "/files/resume.pdf",
+  resume: "/files/resume1.pdf",
   insta:""
 };
 
