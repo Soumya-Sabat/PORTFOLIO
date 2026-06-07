@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Soumyasree Sabat
 
-## Getting Started
+Backend engineer. Currently a B.Tech student.
 
-First, run the development server:
+I build backend systems, write smart contracts, and work on security tooling. I take offensive security seriously — it shapes how I design APIs, auth flows, and infrastructure, not just how I test them.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Open to:** Backend engineering, platform, and security-adjacent roles.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contact
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Portfolio:** [soumyasabat.vercel.app](https://soumyasabat.vercel.app)
+- **Email:** sabat.soumya.official@gmail.com
+- **LinkedIn:** [click-here](https://www.linkedin.com/in/soumyasree-sabat-74a6372ba/)
+- **Resume:** [Download](https://soumyasabat.vercel.app/files/resume1.pdf)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Projects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Aegis** — Automated recon tool for subdomain takeover detection, dangling DNS, open S3 buckets, and SPF misconfigs. Written in Rust. `[Live]`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Zero-Trust Kubernetes Orchestrator** — Multi-region Kubernetes setup using Terraform and ArgoCD, with mTLS, progressive delivery, and policy-based workload isolation. `[In Progress]`
 
-## Deploy on Vercel
+**Vortex** — DeFi lending protocol in Solidity. Includes liquidation bots, invariant tests, and vault risk scoring. `[Committed]`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Scribe** — Real-time collaborative docs with CRDT sync, version history, and permission controls. `[Live]`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**NeuroScribe** — Fine-tuning pipeline for running compact LLMs locally on private datasets. No cloud dependency. `[Research]`
+
+---
+
+## Stack
+
+**Languages:** Python, Rust, TypeScript, JavaScript, Go, Solidity, Bash
+
+**Backend:** FastAPI, Django, Express, NestJS, Node.js, Socket.io
+
+**Blockchain:** Solidity, Web3.js, Hardhat
+
+**AI/ML:** PyTorch, TensorFlow, scikit-learn, RAG pipelines
+
+**Cloud/DevOps:** Kubernetes, Docker, Terraform, AWS, GCP, Prometheus, Grafana
+
+**Databases:** PostgreSQL, MongoDB, Redis, MySQL, Supabase
+
+---
+
+## Certifications
+
+- ISC2 Certificate of Completion — May 2026
+- TryHackMe: Advent of Cyber 2025 — Dec 2025
+
+---
+
+## Hackathons
+
+- SIH State Level — AI Track — Jun 2025
