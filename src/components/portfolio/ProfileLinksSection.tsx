@@ -5,7 +5,7 @@ const profileLinks = [
   {
     label: "Resume",
     href: profile.resume,
-    detail: "Download my latest work datagram",
+    detail: "Download my latest resume",
   },
   {
     label: "GitHub",
@@ -21,19 +21,19 @@ const profileLinks = [
 
 export function ProfileLinksSection() {
   return (
-    <section className="border-t border-[#d6aa45]/10 bg-[#081a13] px-4 py-10 sm:px-6">
-            <SectionHeader
-                eyebrow="Connectivity"
-                title="Socials"
-                // description="Continuous theoretical and applied learning across premier institutions."
-                align="center"
-              />
-      <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-3">
+    <section className="border-t border-[#d6aa45]/10 bg-[#081a13] px-4 py-16 sm:px-6">
+      <SectionHeader
+        eyebrow="Connectivity"
+        title="Professional Links"
+        description="Fast access to the places where my work, credentials, and conversations continue."
+        align="center"
+      />
+      <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-3">
         {profileLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
-            className="group rounded-xl border border-[#d6aa45]/20 bg-[#f0d991]/[0.04] p-5 transition hover:border-[#d6aa45]/45 hover:bg-[#f0d991]/[0.07]"
+            className="group rounded-2xl border border-[#d6aa45]/20 bg-[#f0d991]/[0.04] p-5 transition hover:-translate-y-0.5 hover:border-[#d6aa45]/45 hover:bg-[#f0d991]/[0.07]"
           >
             <div className="flex items-center justify-between gap-4">
               <div className="min-w-0">

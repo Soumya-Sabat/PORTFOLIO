@@ -37,7 +37,7 @@ export function ShowcaseSection() {
         <SectionHeader
           eyebrow="Project Explorer"
           title="Selected Projects"
-          description="Security, cloud, blockchain, full-stack, and AI systems delivered as production-grade builds."
+          description="Each card follows the same frame: problem, approach, and result."
           align="center"
         />
 
@@ -60,7 +60,7 @@ export function ShowcaseSection() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-2xl border border-[#d6aa45]/20 bg-[#03140f]/55 p-5">
+          <div className="rounded-2xl border border-[#d6aa45]/20 bg-[#03140f]/55 p-5 shadow-xl shadow-black/15">
             <h3 className="mb-4 text-xl font-semibold text-[#f0d991]">
               {activeDomain === "All"
                 ? "All Projects"
@@ -79,26 +79,26 @@ export function ShowcaseSection() {
                   type="button"
                 >
                   <span className="flex items-start justify-between gap-4">
-                    <span className="text-base font-bold text-[#fff7df]">
+                    <span className="text-base font-bold leading-6 text-[#fff7df]">
                       {project.title}
                     </span>
                     <span className="shrink-0 rounded-full bg-[#d6aa45]/12 px-2.5 py-1 text-xs font-bold text-[#f0d991]">
                       {project.status}
                     </span>
                   </span>
-                  <span className="mt-3 line-clamp-2 block text-sm font-medium leading-6 text-[#cfc5aa]">
+                  <span className="mt-3 line-clamp-3 block text-sm font-medium leading-6 text-[#cfc5aa]">
                     {project.description}
                   </span>
                 </button>
               ))}
             </div>
-            {/* <p className="mt-5 rounded-xl border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-zinc-400">
-              A focused selection of systems built for measurable reliability,
-              stronger security posture, and production impact.
-            </p> */}
+            <p className="mt-5 rounded-xl border border-[#d6aa45]/15 bg-[#d6aa45]/[0.06] p-4 text-sm font-semibold leading-6 text-[#d9cfb2]">
+              Each project is framed around what it proves: reliability,
+              security posture, automation quality, or product architecture.
+            </p>
           </div>
 
-          <article className="rounded-2xl border border-[#d6aa45]/25 bg-[#03140f]/65 p-6">
+          <article className="rounded-2xl border border-[#d6aa45]/25 bg-[#03140f]/65 p-6 shadow-2xl shadow-black/20">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <span className="text-sm font-bold uppercase tracking-[0.16em] text-[#37b487]">
                 Project details
@@ -110,7 +110,7 @@ export function ShowcaseSection() {
             <h3 className="mt-5 text-3xl font-bold text-[#fff7df]">
               {selectedProject.title}
             </h3>
-            <p className="mt-4 text-base font-medium leading-8 text-[#cfc5aa]">
+            <p className="mt-4 text-base font-medium leading-8 text-[#d9cfb2]">
               {selectedProject.description}
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -125,6 +125,21 @@ export function ShowcaseSection() {
                 <p className="mt-1 text-lg font-bold text-[#fff7df]">
                   {selectedProject.metric}
                 </p>
+              </div>
+            </div>
+            <div className="mt-6 rounded-2xl border border-[#37b487]/20 bg-[#37b487]/[0.055] p-5">
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-[#9be7bd]">
+                Proof Points
+              </p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {selectedProject.proofPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="rounded-xl border border-[#37b487]/15 bg-black/20 p-3 text-sm font-semibold leading-5 text-[#dff8eb]"
+                  >
+                    {point}
+                  </div>
+                ))}
               </div>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">

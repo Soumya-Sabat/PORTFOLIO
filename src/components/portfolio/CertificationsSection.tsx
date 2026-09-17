@@ -9,7 +9,7 @@ export function CertificationsSection() {
           <SectionHeader
             eyebrow="Verifiable Credentials"
             title="Professional Certifications"
-            description="Practical credentials across offensive security, cloud infrastructure, blockchain architecture, and machine learning."
+            description="Credential names are written conservatively from issuer wording to avoid unclear abbreviations."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {certifications.map((cert) => (
@@ -30,7 +30,9 @@ export function CertificationsSection() {
                   </div>
                   <div className="flex justify-between gap-4">
                     <dt>Credential</dt>
-                    <dd className="text-[#fff7df]">{cert.credential}</dd>
+                    <dd className="break-all text-right text-[#fff7df]">
+                      {cert.credential}
+                    </dd>
                   </div>
                 </dl>
               </article>

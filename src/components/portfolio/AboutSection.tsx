@@ -15,23 +15,20 @@ export function AboutSection() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl border border-[#d6aa45]/20 bg-[#f0d991]/[0.04] p-5"
+                className="rounded-2xl border border-[#d6aa45]/20 bg-[#f0d991]/[0.04] p-5 shadow-lg shadow-black/10"
               >
                 <p className="text-3xl font-bold text-[#d6aa45]">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#cfc5aa]">{stat.label}</p>
+                <p className="mt-1 text-xs font-semibold text-[#d9cfb2]">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="space-y-5 text-sm font-medium leading-7 text-[#d9cfb2] sm:text-base">
+        <div className="space-y-5 text-base font-medium leading-8 text-[#d9cfb2]">
           <p>
-            I am a backend engineer building adversarial-ready infrastructure at the intersection of distributed systems, blockchain, and security. My work combines pragmatic engineering with offensive thinking to deliver reliable, production-grade platforms.
-          </p>
-          <p>
-            Today, I design backend APIs, distributed services, and smart contract-integrated systems that thrive under real pressure. My infrastructure is observable, failure-aware, and resilient by design.
+            I build backend systems for environments where failure is adversarial, not accidental — distributed services or smart contract platforms that assume something will try to break them. <br /> My work spans API design, consensus-layer integration, on-chain/off-chain data pipelines under 1000req/sec in testing. I design for failure first: circuit breakers, chaos testing before I design for features. <br /> Every system I ship is instrumented to fail loud and recover fast, because in blockchain/security infrastructure, silent failure is the expensive kind.
           </p>
           <div className="rounded-2xl border border-[#d6aa45]/25 bg-gradient-to-r from-[#d6aa45]/12 to-[#0f6b4c]/20 p-5">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f0d991]">

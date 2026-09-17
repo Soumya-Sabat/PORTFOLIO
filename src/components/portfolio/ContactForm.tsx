@@ -77,7 +77,7 @@ export function ContactForm() {
           className=" rounded-full bg-[#d6aa45] px-5 py-3 text-sm font-extrabold text-[#03140f] transition hover:bg-[#f0d991] disabled:cursor-not-allowed disabled:opacity-60"
           type="submit"
         >
-          {state === "loading" ? "Sending..." : "Take Off"}
+          {state === "loading" ? "Sending..." : "Send Message"}
         </button>
         {message ? (
           <p
