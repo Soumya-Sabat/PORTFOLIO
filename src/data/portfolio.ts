@@ -16,27 +16,27 @@ export const expertise = [
   {
     title: "Offensive Security",
     detail: "Pentesting, exploit research, APIs, cloud attack paths",
-    accent: "from-rose-500 to-red-600",
+    accent: "from-[#37b487] to-[#d6aa45]",
   },
   {
     title: "DevOps / SRE",
     detail: "Kubernetes, CI/CD, observability, incident response",
-    accent: "from-amber-400 to-orange-500",
+    accent: "from-[#d6aa45] to-[#f0d991]",
   },
   {
     title: "Blockchain Dev",
     detail: "Smart contracts, audits, integrations, wallet flows",
-    accent: "from-violet-500 to-fuchsia-500",
+    accent: "from-[#0f6b4c] to-[#d6aa45]",
   },
   {
     title: "Full Stack",
     detail: "React, Next.js, Node, APIs, scalable product systems",
-    accent: "from-sky-500 to-blue-600",
+    accent: "from-[#1f8f68] to-[#f0d991]",
   },
   {
     title: "AI / ML Engineering",
     detail: "RAG apps, model pipelines, evals, automation",
-    accent: "from-emerald-400 to-teal-600",
+    accent: "from-[#37b487] to-[#0f6b4c]",
   },
 ];
 

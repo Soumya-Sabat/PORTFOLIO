@@ -32,7 +32,7 @@ export function ShowcaseSection() {
   }
 
   return (
-    <section id="projects" className="bg-[#151517] px-4 py-24">
+    <section id="projects" className="bg-[#06251b] px-4 py-24">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Project Explorer"
@@ -41,15 +41,15 @@ export function ShowcaseSection() {
           align="center"
         />
 
-        <div className="mx-auto mb-10 flex max-w-5xl flex-wrap justify-center gap-2 rounded-2xl border border-white/10 bg-black/25 p-2">
+        <div className="mx-auto mb-10 flex max-w-5xl flex-wrap justify-center gap-2 rounded-2xl border border-[#d6aa45]/20 bg-black/20 p-2">
           {projectDomains.map((domain) => (
             <button
               key={domain}
               aria-pressed={activeDomain === domain}
               className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
                 activeDomain === domain
-                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
-                  : "text-zinc-400 hover:bg-white/10 hover:text-white"
+                  ? "bg-[#d6aa45] text-[#03140f] shadow-lg shadow-[#d6aa45]/20"
+                  : "text-[#cfc5aa] hover:bg-[#d6aa45]/12 hover:text-[#fff7df]"
               }`}
               onClick={() => chooseDomain(domain)}
               type="button"
@@ -60,8 +60,8 @@ export function ShowcaseSection() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="rounded-2xl border border-white/10 bg-zinc-950/45 p-5">
-            <h3 className="mb-4 text-lg font-bold text-blue-300">
+          <div className="rounded-2xl border border-[#d6aa45]/20 bg-[#03140f]/55 p-5">
+            <h3 className="mb-4 text-xl font-semibold text-[#f0d991]">
               {activeDomain === "All"
                 ? "All Projects"
                 : `${activeDomain} Projects`}
@@ -72,21 +72,21 @@ export function ShowcaseSection() {
                   key={project.title}
                   className={`w-full rounded-xl border px-4 py-4 text-left transition ${
                     selectedProject.title === project.title
-                      ? "border-blue-400/50 bg-blue-500/10"
-                      : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.06]"
+                      ? "border-[#d6aa45]/55 bg-[#d6aa45]/10"
+                      : "border-[#d6aa45]/15 bg-[#f0d991]/[0.035] hover:border-[#d6aa45]/30 hover:bg-[#f0d991]/[0.06]"
                   }`}
                   onClick={() => setSelectedTitle(project.title)}
                   type="button"
                 >
                   <span className="flex items-start justify-between gap-4">
-                    <span className="text-base font-bold text-white">
+                    <span className="text-base font-bold text-[#fff7df]">
                       {project.title}
                     </span>
-                    <span className="shrink-0 rounded-full bg-white/10 px-2.5 py-1 text-xs font-bold text-zinc-300">
+                    <span className="shrink-0 rounded-full bg-[#d6aa45]/12 px-2.5 py-1 text-xs font-bold text-[#f0d991]">
                       {project.status}
                     </span>
                   </span>
-                  <span className="mt-3 line-clamp-2 block text-sm leading-6 text-zinc-400">
+                  <span className="mt-3 line-clamp-2 block text-sm font-medium leading-6 text-[#cfc5aa]">
                     {project.description}
                   </span>
                 </button>
@@ -98,31 +98,31 @@ export function ShowcaseSection() {
             </p> */}
           </div>
 
-          <article className="rounded-2xl border border-white/10 bg-zinc-950/55 p-6">
+          <article className="rounded-2xl border border-[#d6aa45]/25 bg-[#03140f]/65 p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <span className="text-sm font-bold uppercase tracking-[0.16em] text-emerald-300">
+              <span className="text-sm font-bold uppercase tracking-[0.16em] text-[#37b487]">
                 Project details
               </span>
-              <span className="rounded-full border border-rose-400/30 bg-rose-400/10 px-3 py-1 text-sm font-bold text-rose-200">
+              <span className="rounded-full border border-[#d6aa45]/30 bg-[#d6aa45]/10 px-3 py-1 text-sm font-bold text-[#f0d991]">
                 {selectedProject.status}
               </span>
             </div>
-            <h3 className="mt-5 text-3xl font-black text-white">
+            <h3 className="mt-5 text-3xl font-bold text-[#fff7df]">
               {selectedProject.title}
             </h3>
-            <p className="mt-4 text-base leading-8 text-zinc-400">
+            <p className="mt-4 text-base font-medium leading-8 text-[#cfc5aa]">
               {selectedProject.description}
             </p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl bg-black/35 p-5">
-                <p className="text-sm text-zinc-500">Impact</p>
-                <p className="mt-1 text-lg font-bold text-white">
+              <div className="rounded-xl border border-[#d6aa45]/10 bg-black/25 p-5">
+                <p className="text-sm font-medium text-[#9f9376]">Impact</p>
+                <p className="mt-1 text-lg font-bold text-[#fff7df]">
                   {selectedProject.impact}
                 </p>
               </div>
-              <div className="rounded-xl bg-black/35 p-5">
-                <p className="text-sm text-zinc-500">Metric</p>
-                <p className="mt-1 text-lg font-bold text-white">
+              <div className="rounded-xl border border-[#d6aa45]/10 bg-black/25 p-5">
+                <p className="text-sm font-medium text-[#9f9376]">Metric</p>
+                <p className="mt-1 text-lg font-bold text-[#fff7df]">
                   {selectedProject.metric}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export function ShowcaseSection() {
               {selectedProject.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-white/10 px-3.5 py-1.5 text-sm text-zinc-300"
+                  className="rounded-full border border-[#d6aa45]/20 px-3.5 py-1.5 text-sm font-medium text-[#d9cfb2]"
                 >
                   {tech}
                 </span>

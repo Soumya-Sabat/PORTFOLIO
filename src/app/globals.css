@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050607;
-  --foreground: #f4f4f5;
+  --background: #03140f;
+  --foreground: #f8f1df;
+  --emerald-deep: #03140f;
+  --emerald-stone: #06251b;
+  --emerald-glow: #0f6b4c;
+  --gold: #d6aa45;
+  --gold-soft: #f0d991;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(15, 107, 76, 0.3), transparent 34rem),
+    linear-gradient(180deg, #03140f 0%, #041c15 46%, #020c09 100%);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), Arial, Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 html {
@@ -23,7 +31,14 @@ html {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--font-cormorant), Georgia, serif;
+  letter-spacing: 0;
+}
+
 ::selection {
-  background: rgba(59, 130, 246, 0.45);
-  color: #ffffff;
+  background: rgba(214, 170, 69, 0.45);
+  color: #fff7df;
 }

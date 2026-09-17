@@ -17,12 +17,12 @@ export function SectionHeader({
         align === "center" ? "text-center" : ""
       }`}
     >
-      <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
+      <span className="inline-flex rounded-full border border-[#d6aa45]/25 bg-[#d6aa45]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#f0d991]">
         {eyebrow}
       </span>
-      <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">{title}</h2>
+      <h2 className="mt-4 text-3xl font-bold text-[#fff7df] sm:text-4xl">{title}</h2>
       {description ? (
-        <p className="mt-3 text-sm leading-6 text-zinc-400 sm:text-base">
+        <p className="mt-3 text-sm font-medium leading-6 text-[#cfc5aa] sm:text-base">
           {description}
         </p>
       ) : null}

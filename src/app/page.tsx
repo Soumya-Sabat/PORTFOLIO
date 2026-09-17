@@ -11,7 +11,7 @@ import { ShowcaseSection } from "@/components/portfolio/ShowcaseSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050607] text-zinc-100">
+    <main className="min-h-screen overflow-hidden bg-[#03140f] text-[#f8f1df]">
       <Navbar />
       <HeroSection />
       <AboutSection />
